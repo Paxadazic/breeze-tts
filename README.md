@@ -67,11 +67,14 @@ For the tested CUDA environment, build the included Docker image:
 bash docker/build.sh
 ```
 
-The default image targets H100/Hopper (sm90). For A100:
+The default image targets H100/Hopper (sm90). Select another GPU with `BREEZE_GPU`, for example A100 or a consumer RTX card:
 
 ```bash
-FLASH_ATTN_CUDA_ARCHS=80 bash docker/build.sh
+BREEZE_GPU=a100 bash docker/build.sh
+BREEZE_GPU=rtx40 bash docker/build.sh   # rtx30, rtx40, rtx50, or rtx for all three
 ```
+
+To run the API on a GeForce RTX desktop, including Windows through WSL 2 or Docker Desktop, and reach it from other PCs on your LAN, see [Running the API server on a consumer RTX PC](docs/rtx-lan-server.md).
 
 ### 🎙️ Voice Clone
 
