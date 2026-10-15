@@ -37,6 +37,7 @@ RUN python docker/smoke_check.py \
     && python -m pytest -q \
         tests/test_logits_process.py \
         tests/test_templates.py \
+        tests/test_docker_build_targets.py \
         tests/test_warmup_profile.py
 
 ENTRYPOINT ["/opt/breeze-infer/docker/entrypoint.sh"]
